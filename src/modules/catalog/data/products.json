@@ -1,0 +1,50 @@
+[
+  {
+    "id": "c1",
+    "name": "Blusa Escote V Beige",
+    "category": "Blusas",
+    "fabric": "Lino Ligero",
+    "price": 85.00,
+    "mainImage": "/images/blusa_crema_1.jpeg"
+  },
+  {
+    "id": "c2",
+    "name": "Blusa Camisera Anudada",
+    "category": "Blusas",
+    "fabric": "Viscosa Fluida",
+    "price": 79.00,
+    "mainImage": "/images/blusa_crema_rubia_1.jpeg"
+  },
+  {
+    "id": "c3",
+    "name": "Blusa Manga Acampanada Botánica",
+    "category": "Blusas",
+    "fabric": "Seda Satinada / Viscosa",
+    "price": 89.00,
+    "mainImage": "/images/blusa_verde_1.webp"
+  },
+  {
+    "id": "c4",
+    "name": "Pantalón Jogger Pretina Alta",
+    "category": "Pantalones",
+    "fabric": "Algodón Viscosa Soft",
+    "price": 95.00,
+    "mainImage": "/images/pantalon_marron_1.jpeg"
+  },
+  {
+    "id": "c5",
+    "name": "Pantalón Palazzo Olive",
+    "category": "Pantalones",
+    "fabric": "Algodón Viscosa Stretch",
+    "price": 98.00,
+    "mainImage": "/images/pantalon_verde_1.jpeg"
+  },
+  {
+    "id": "c6",
+    "name": "Vestido Botones Mostaza",
+    "category": "Vestidos",
+    "fabric": "Lino Estructurado",
+    "price": 120.00,
+    "mainImage": "/images/vestido_amarillo_1.png"
+  }
+]

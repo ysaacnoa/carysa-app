@@ -1,0 +1,89 @@
+{
+  "c1": {
+    "id": "c1",
+    "fabricDetails": "Tela fresca, ligera y de caída suave.",
+    "sizes": ["S", "M", "L"],
+    "colors": [
+      { "name": "Beige Arena", "hex": "#E5D3B3" },
+      { "name": "Crema Suave", "hex": "#FAF0E6" }
+    ],
+    "images": [
+      "/images/blusa_crema_1.jpeg",
+      "/images/blusa_crema_2.jpeg",
+      "/images/blusa_crema_3.png"
+    ],
+    "description": "Blusa de lino holgada con corte femenino y mangas ajustables mediante tirilla y botón."
+  },
+  "c2": {
+    "id": "c2",
+    "fabricDetails": "Textura ultrasuave con acabado mate.",
+    "sizes": ["S", "M", "L"],
+    "colors": [
+      { "name": "Marfil", "hex": "#FFFFF0" },
+      { "name": "Beige Claro", "hex": "#F5F5DC" }
+    ],
+    "images": [
+      "/images/blusa_crema_rubia_1.jpeg",
+      "/images/blusa_crema_rubia_2.png",
+      "/images/blusa_crema_rubia_3.png"
+    ],
+    "description": "Blusa camisera con detalle anudado frontal en la cintura, ideal para estilos casual chic."
+  },
+  "c3": {
+    "id": "c3",
+    "fabricDetails": "Estampado botánico con brillo sutil y caída fluida.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "Verde Esmeralda", "hex": "#1B4D3E" }
+    ],
+    "images": [
+      "/images/blusa_verde_1.webp",
+      "/images/blusa_verde_2.jpg",
+      "/images/blusa_verde_3.jpg"
+    ],
+    "description": "Blusa con cuello V y mangas acampanadas 3/4 en estampado botánico tono verde."
+  },
+  "c4": {
+    "id": "c4",
+    "fabricDetails": "Tela elasticada transpirable para máximo confort.",
+    "sizes": ["S", "M", "L"],
+    "colors": [
+      { "name": "Marrón Cacao", "hex": "#5C4033" },
+      { "name": "Tierra", "hex": "#73523B" }
+    ],
+    "images": [
+      "/images/pantalon_marron_1.jpeg",
+      "/images/pantalon_marron_2.jpeg",
+      "/images/pantalon_marron_3.jpeg"
+    ],
+    "description": "Pantalón jogger cómodo con pretina ancha elasticada y lazo regulable en cintura."
+  },
+  "c5": {
+    "id": "c5",
+    "fabricDetails": "Estructura fluida con cintura alta estilizada.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "Verde Olivo", "hex": "#556B2F" }
+    ],
+    "images": [
+      "/images/pantalon_verde_1.jpeg",
+      "/images/pantalon_verde_2.png",
+      "/images/pantalon_verde_3.png"
+    ],
+    "description": "Pantalón de bota ancha tipo Palazzo con bolsillos laterales y pretina alta con ajuste."
+  },
+  "c6": {
+    "id": "c6",
+    "fabricDetails": "Lino con cuerpo, incluye cinturón de pita natural.",
+    "sizes": ["S", "M", "L"],
+    "colors": [
+      { "name": "Mostaza Sol", "hex": "#E3A857" }
+    ],
+    "images": [
+      "/images/vestido_amarillo_1.png",
+      "/images/vestido_amarillo_2.jpeg",
+      "/images/vestido_amarillo_3.png"
+    ],
+    "description": "Vestido camisera corto con abotonadura frontal, solapas en cuello y ajuste en cintura."
+  }
+}
