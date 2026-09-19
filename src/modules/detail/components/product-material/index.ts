@@ -1,0 +1,1 @@
+export { ProductMaterial } from './ProductMaterial';

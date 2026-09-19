@@ -1,1 +1,1 @@
-export { ProductDetailScreen } from  './screen/ProductDetailScreen';
+export { ProductDetailScreen } from './screen/product-detail';

@@ -1,0 +1,75 @@
+import * as stylex from '@stylexjs/stylex';
+import {
+  colors,
+  fontSizes,
+  radius,
+  shadows,
+  spacing,
+  weights,
+  zIndex,
+} from '@/styles/theme.stylex';
+
+export const styles = stylex.create({
+  wrapper: {
+    position: 'fixed',
+    bottom: spacing.md,
+    left: 0,
+    right: 0,
+    display: 'flex',
+    justifyContent: 'center',
+    paddingInline: spacing.md,
+    zIndex: zIndex.nav,
+    pointerEvents: 'none',
+  },
+  nav: {
+    pointerEvents: 'auto',
+    width: '100%',
+    maxWidth: '400px',
+    height: '64px',
+    backgroundColor: colors.bgSurfaceTranslucent,
+    backdropFilter: 'blur(16px)',
+    borderRadius: radius['2xl'],
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderColor: colors.borderSubtle,
+    boxShadow: shadows.float,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    paddingInline: spacing.xs,
+  },
+  item: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '2px',
+    paddingBlock: spacing.xs,
+    paddingInline: spacing.md,
+    borderRadius: radius.xl,
+    backgroundColor: 'transparent',
+    borderWidth: 0,
+    color: colors.textSecondary,
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    outline: 'none',
+    ':hover': {
+      color: colors.textBrand,
+    },
+    ':active': {
+      transform: 'scale(0.92)',
+    },
+  },
+  itemActive: {
+    color: colors.textBrand,
+    backgroundColor: colors.brandSalmonLight,
+  },
+  label: {
+    fontSize: fontSizes.xs,
+    fontWeight: weights.medium,
+    lineHeight: 1,
+  },
+  labelActive: {
+    fontWeight: weights.bold,
+  },
+});
