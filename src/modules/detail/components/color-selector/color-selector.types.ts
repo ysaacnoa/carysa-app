@@ -1,7 +1,7 @@
-import type { ColorOption } from "../../types/product-detail.type";
+import type { ColorVariant } from "../../types/product-detail.type";
 
 export interface ColorSelectorProps {
-  colors?: ColorOption[];
+  colors?: ColorVariant[];
   selectedColor: string;
   onSelectColor: (colorName: string) => void;
 }
