@@ -16,6 +16,7 @@ import { styles } from './product-detail.styles';
 export const ProductDetailScreen = () => {
   const {
     product,
+    isLoading,
     imagesList,
     currentImageIndex,
     setCurrentImageIndex,
@@ -26,6 +27,14 @@ export const ProductDetailScreen = () => {
     handleOrder,
     handleGoBack,
   } = useProductDetailScreen();
+
+  if (isLoading) {
+    return (
+      <div {...stylex.props(styles.screen)} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <p style={{ color: '#888', fontSize: '14px' }}>Cargando prenda...</p>
+      </div>
+    );
+  }
 
   if (!product) {
     return <NotFoundState onGoBack={handleGoBack} />;

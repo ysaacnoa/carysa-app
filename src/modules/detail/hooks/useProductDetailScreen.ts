@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '../../../shared/utils/whatsapp';
 export function useProductDetailScreen() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const product = useProductDetail(id);
+  const { product, isLoading } = useProductDetail(id);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string>('');
@@ -52,6 +52,7 @@ export function useProductDetailScreen() {
 
   return {
     product,
+    isLoading,
     imagesList,
     currentImageIndex,
     setCurrentImageIndex,

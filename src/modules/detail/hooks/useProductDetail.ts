@@ -4,11 +4,17 @@ import type { ProductDetail } from '../types/product-detail.type';
 
 export interface FullProductDetail extends CatalogItem, ProductDetail {}
 
-export function useProductDetail(id?: string): FullProductDetail | null {
+export function useProductDetail(id?: string) {
   const [fullProduct, setFullProduct] = useState<FullProductDetail | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    if (!id) return;
+    if (!id) {
+      setIsLoading(false);
+      return;
+    }
+
+    setIsLoading(true);
 
     Promise.all([
       fetch('/catalog/data/products.json').then((res) => res.json()),
@@ -23,7 +29,6 @@ export function useProductDetail(id?: string): FullProductDetail | null {
         );
 
         if (!baseProduct) {
-          console.warn(`Producto base no encontrado en el catálogo para el id: ${id}`);
           setFullProduct(null);
           return;
         }
@@ -34,10 +39,13 @@ export function useProductDetail(id?: string): FullProductDetail | null {
         });
       })
       .catch((err) => {
-        console.error('Error al cargar el micromanejo del detalle:', err);
+        console.error('Error al cargar el detalle:', err);
         setFullProduct(null);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, [id]);
 
-  return fullProduct;
+  return { product: fullProduct, isLoading };
 }
