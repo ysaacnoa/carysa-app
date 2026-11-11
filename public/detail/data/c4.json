@@ -1,0 +1,24 @@
+{
+  "id": "c4",
+  "name": "Pantalón Aladino",
+  "price": 35.00,
+  "wholesalePrice": 28.00,
+  "fabricDetails": "Tela elasticada transpirable para máximo confort.",
+  "sizes": [
+    "S",
+    "M",
+    "L"
+  ],
+  "colors": [
+    {
+      "name": "Marrón Cacao",
+      "hex": "#5C4033",
+      "poses": [
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/pants/model-1/position-1.jpeg",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/pants/model-1/position-2.jpeg",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/pants/model-1/position-3.jpeg"
+      ]
+    }
+  ],
+  "description": "Pantalón jogger cómodo con pretina ancha elasticada y lazo regulable en cintura."
+}

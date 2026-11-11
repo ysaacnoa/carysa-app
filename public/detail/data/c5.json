@@ -1,0 +1,25 @@
+{
+  "id": "c5",
+  "name": "Pantalón Palazzo",
+  "price": 32.00,
+  "wholesalePrice": 28.00,
+  "fabricDetails": "Estructura fluida con cintura alta estilizada.",
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "colors": [
+    {
+      "name": "Verde Olivo",
+      "hex": "#556B2F",
+      "poses": [
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/pants/model-2/position-1.jpeg",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/pants/model-2/position-2.png",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/pants/model-2/position-3.png"
+      ]
+    }
+  ],
+  "description": "Pantalón de bota ancha tipo Palazzo con bolsillos laterales y pretina alta con ajuste."
+}

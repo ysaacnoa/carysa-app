@@ -1,0 +1,25 @@
+{
+  "id": "c3",
+  "name": "Blusa Elizabeth",
+  "price": 35.00,
+  "wholesalePrice": 32.00,
+  "fabricDetails": "Estampado botánico con brillo sutil y caída fluida.",
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "colors": [
+    {
+      "name": "Verde Esmeralda",
+      "hex": "#1B4D3E",
+      "poses": [
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-3/position-1.webp",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-3/position-2.jpg",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-3/position-3.jpg"
+      ]
+    }
+  ],
+  "description": "Blusa con cuello V y mangas acampanadas 3/4 en estampado botánico tono verde."
+}

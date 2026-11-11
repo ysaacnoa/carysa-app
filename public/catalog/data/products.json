@@ -1,0 +1,44 @@
+[
+  {
+    "id": "c1",
+    "name": "Blusa Sofia",
+    "category": "blouses",
+    "price": 35.00,
+    "coverImage": "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-1/position-1.jpeg"
+  },
+  {
+    "id": "c2",
+    "name": "Blusa Ariana",
+    "category": "blouses",
+    "price": 35.00,
+    "coverImage": "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-2/position-1.jpeg"
+  },
+  {
+    "id": "c3",
+    "name": "Blusa Elizabeth",
+    "category": "blouses",
+    "price": 35.00,
+    "coverImage": "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-3/position-1.webp"
+  },
+  {
+    "id": "c4",
+    "name": "Pantalón Aladino",
+    "category": "pants",
+    "price": 35.00,
+    "coverImage": "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/pants/model-1/position-1.jpeg"
+  },
+  {
+    "id": "c5",
+    "name": "Pantalón Palazzo",
+    "category": "pants",
+    "price": 32.00,
+    "coverImage": "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/pants/model-2/position-1.jpeg"
+  },
+  {
+    "id": "c6",
+    "name": "Vestido Mariangel",
+    "category": "dresses",
+    "price": 35.00,
+    "coverImage": "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/dresses/model-1/position-1.png"
+  }
+]

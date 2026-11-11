@@ -1,0 +1,24 @@
+{
+  "id": "c1",
+  "name": "Blusa Sofia",
+  "price": 35.00,
+  "wholesalePrice": 30.00,
+  "fabricDetails": "Tela fresca, ligera y de caída suave.",
+  "sizes": [
+    "S",
+    "M",
+    "L"
+  ],
+  "colors": [
+    {
+      "name": "Beige Arena",
+      "hex": "#E5D3B3",
+      "poses": [
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-1/position-1.jpeg",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-1/position-2.jpeg",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-1/position-3.png"
+      ]
+    }
+  ],
+  "description": "Blusa de lino holgada con corte femenino y mangas ajustables mediante tirilla y botón."
+}

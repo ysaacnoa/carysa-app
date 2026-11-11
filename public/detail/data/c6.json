@@ -1,0 +1,20 @@
+{
+    "id": "c6",
+    "name": "Vestido Mariangel",
+    "price": 35.00,
+    "wholesalePrice": 30.00,
+    "fabricDetails": "Lino con cuerpo, incluye cinturón de pita natural.",
+    "sizes": ["S", "M", "L"],
+    "colors": [
+      { 
+        "name": "Mostaza Sol", 
+        "hex": "#E3A857",
+        "poses": [
+          "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/dresses/model-1/position-1.png",
+          "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/dresses/model-1/position-2.png",
+          "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/dresses/model-1/position-3.png"
+        ]
+      }
+    ],
+    "description": "Vestido camisera corto con abotonadura frontal, solapas en cuello y ajuste en cintura."
+  }

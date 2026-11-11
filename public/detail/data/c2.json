@@ -1,0 +1,24 @@
+{
+  "id": "c2",
+  "name": "Blusa Ariana",
+  "price": 35.00,
+  "wholesalePrice": 30.00,
+  "fabricDetails": "Textura ultrasuave con acabado mate.",
+  "sizes": [
+    "S",
+    "M",
+    "L"
+  ],
+  "colors": [
+    {
+      "name": "Marfil",
+      "hex": "#FFFFF0",
+      "poses": [
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-2/position-1.jpeg",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-2/position-1.jpeg",
+        "https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/products/blouses/model-2/position-3.jpeg"
+      ]
+    }
+  ],
+  "description": "Blusa camisera con detalle anudado frontal en la cintura, ideal para estilos casual chic."
+}
