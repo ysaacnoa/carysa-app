@@ -14,7 +14,7 @@ export function useProductDetailScreen() {
 
   useEffect(() => {
     if (product) {
-      if (product.sizes?.length > 0) {
+      if (product.sizes && product.sizes.length > 0) {
         setSelectedSize(product.sizes[0]);
       }
       if (product.colors && product.colors.length > 0) {
@@ -24,7 +24,7 @@ export function useProductDetailScreen() {
   }, [product]);
 
   const selectedColorObj = useMemo(() => {
-    if (!product || !product.colors) return null;
+    if (!product || !product.colors || product.colors.length === 0) return null;
     return product.colors.find((c) => c.name === selectedColor) || product.colors[0];
   }, [product, selectedColor]);
 
@@ -33,12 +33,13 @@ export function useProductDetailScreen() {
     if (selectedColorObj && selectedColorObj.poses && selectedColorObj.poses.length > 0) {
       return selectedColorObj.poses;
     }
-    return [product.coverImage];
+    return product.coverImage ? [product.coverImage] : [];
   }, [product, selectedColorObj]);
 
-  useEffect(() => {
+  const handleSelectColor = (colorName: string) => {
+    setSelectedColor(colorName);
     setCurrentImageIndex(0);
-  }, [selectedColor]);
+  };
 
   const handleOrder = () => {
     if (!product) return;
@@ -57,7 +58,7 @@ export function useProductDetailScreen() {
     selectedSize,
     setSelectedSize,
     selectedColor,
-    setSelectedColor,
+    setSelectedColor: handleSelectColor,
     handleOrder,
     handleGoBack,
   };
