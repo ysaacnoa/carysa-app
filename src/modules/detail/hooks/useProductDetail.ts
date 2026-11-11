@@ -15,16 +15,19 @@ export function useProductDetail(id?: string): FullProductDetail | null {
       fetch(`/detail/data/${id}.json`).then((res) => {
         if (!res.ok) throw new Error(`No se encontró el detalle para ${id}`);
         return res.json();
-      })
+      }),
     ])
       .then(([catalogData, detailProduct]) => {
-        const baseProduct = (catalogData as CatalogItem[]).find((p) => p.id === id);
+        const baseProduct = (catalogData as CatalogItem[]).find(
+          (p) => String(p.id) === String(id)
+        );
 
         if (!baseProduct) {
+          console.warn(`Producto base no encontrado en el catálogo para el id: ${id}`);
           setFullProduct(null);
           return;
         }
-        
+
         setFullProduct({
           ...baseProduct,
           ...detailProduct,
