@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useProductDetail } from './useProductDetail';
 import { buildWhatsAppUrl } from '../../../shared/utils/whatsapp';
@@ -12,7 +12,6 @@ export function useProductDetailScreen() {
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [selectedColor, setSelectedColor] = useState<string>('');
 
-  // Sincroniza los estados iniciales cuando se resuelve el producto
   useEffect(() => {
     if (product) {
       if (product.sizes?.length > 0) {
@@ -24,16 +23,27 @@ export function useProductDetailScreen() {
     }
   }, [product]);
 
-  const imagesList = product
-    ? product.images && product.images.length > 0
-      ? product.images
-      : [product.mainImage]
-    : [];
+  const selectedColorObj = useMemo(() => {
+    if (!product || !product.colors) return null;
+    return product.colors.find((c) => c.name === selectedColor) || product.colors[0];
+  }, [product, selectedColor]);
+
+  const imagesList = useMemo(() => {
+    if (!product) return [];
+    if (selectedColorObj && selectedColorObj.poses && selectedColorObj.poses.length > 0) {
+      return selectedColorObj.poses;
+    }
+    return [product.coverImage];
+  }, [product, selectedColorObj]);
+
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [selectedColor]);
 
   const handleOrder = () => {
     if (!product) return;
     const details = `${product.name}${selectedColor ? ` (Color: ${selectedColor})` : ''}`;
-    const url = buildWhatsAppUrl(details, product.fabric, selectedSize, product.price);
+    const url = buildWhatsAppUrl(details, product.fabricDetails, selectedSize, product.price);
     window.open(url, '_blank');
   };
 

@@ -9,7 +9,7 @@ export const Header = ({ searchTerm, setSearchTerm }: HeaderProps) => {
     <header {...stylex.props(styles.header)}>
       {/* Flor Esquina Izquierda */}
       <img
-        src="/flores_salmon_izq.png"
+        src="https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/ui/decorative/flores_salmon_izq.png"
         alt=""
         aria-hidden="true"
         {...stylex.props(styles.flowerLeft)}
@@ -18,7 +18,7 @@ export const Header = ({ searchTerm, setSearchTerm }: HeaderProps) => {
       {/* Flor Esquina Derecha con contenedor aislado para el espejo */}
       <div {...stylex.props(styles.flowerRightWrap)}>
         <img
-          src="/flores_salmon_izq.png"
+          src="https://pub-ca80f20b7e1043ffbe2af60cad47810f.r2.dev/carysa-app/ui/decorative/flores_salmon_der.png"
           alt=""
           aria-hidden="true"
           {...stylex.props(styles.flowerRight)}

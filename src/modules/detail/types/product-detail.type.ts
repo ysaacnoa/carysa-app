@@ -1,16 +1,18 @@
-export interface ColorOption {
+export interface ColorVariant {
   name: string;
   hex: string;
+  poses: string[];
 }
 
 export interface ProductDetail {
   id: string;
+  name: string;
+  price: number;
+  wholesalePrice: number;
   fabricDetails: string;
   sizes: string[];
-  colors: ColorOption[];
-  images: string[];
+  colors: ColorVariant[];
   description: string;
 }
 
-// Tipo Diccionario indexado por el ID del producto
 export type ProductDetailsMap = Record<string, ProductDetail>;

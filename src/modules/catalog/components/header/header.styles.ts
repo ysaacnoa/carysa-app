@@ -40,7 +40,6 @@ export const styles = stylex.create({
     height: '100%',
     maxHeight: '124px',
     pointerEvents: 'none',
-    transform: 'scaleX(-1)', // Aplicamos el espejo en un div contenedor para no romper el layout
   },
   flowerRight: {
     height: '100%',

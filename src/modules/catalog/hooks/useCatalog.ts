@@ -1,32 +1,41 @@
-import { useState, useMemo } from 'react';
-import productsData from '../data/products.json';
+import { useState, useEffect } from 'react';
 import type { CatalogItem } from '../types/catalog.types';
 
 export function useCatalog() {
+  const [products, setProducts] = useState<CatalogItem[]>([]);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategory, setActiveCategory] = useState('Todos');
+  const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
 
-  const categories = useMemo(() => {
-    const cats = Array.from(new Set(productsData.map((p) => p.category)));
-    return ['Todos', ...cats];
+  useEffect(() => {
+
+    fetch('/catalog/data/products.json')
+      .then((res) => {
+        if (!res.ok) throw new Error('No se pudo cargar el catálogo');
+        return res.json();
+      })
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Error cargando los productos:', err);
+        setLoading(false);
+      });
   }, []);
 
-  const filteredProducts = useMemo(() => {
-    return (productsData as CatalogItem[]).filter((product) => {
-      const matchesCategory = activeCategory === 'Todos' || product.category === activeCategory;
-      const matchesSearch =
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.fabric.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
-  }, [searchTerm, activeCategory]);
+  const filteredProducts = products.filter((product) => {
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'Todos' || product.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return {
     products: filteredProducts,
-    categories,
+    loading,
     searchTerm,
     setSearchTerm,
-    activeCategory,
-    setActiveCategory,
+    selectedCategory,
+    setSelectedCategory,
   };
 }

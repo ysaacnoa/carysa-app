@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 import { ColorSelector } from '../../components/color-selector';
@@ -58,6 +58,15 @@ export const ProductDetailScreen = () => {
             description={product.description}
           />
 
+          {product.wholesalePrice && (
+            <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 flex items-center gap-2">
+              <Sparkles size={18} className="text-amber-600" />
+              <span className="text-sm text-amber-900">
+                Precio por mayor: <strong>S/ {product.wholesalePrice.toFixed(2)}</strong>
+              </span>
+            </div>
+          )}
+
           <ColorSelector
             colors={product.colors}
             selectedColor={selectedColor}
@@ -71,13 +80,15 @@ export const ProductDetailScreen = () => {
           />
 
           <ProductMaterial
-            fabric={product.fabric}
             fabricDetails={product.fabricDetails}
           />
         </div>
       </main>
 
-      <OrderButton selectedSize={selectedSize} onOrder={handleOrder} />
+      <OrderButton 
+        selectedSize={selectedSize} 
+        onOrder={handleOrder} 
+      />
     </div>
   );
 };

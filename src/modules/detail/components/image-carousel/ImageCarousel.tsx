@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as stylex from '@stylexjs/stylex';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { ImageCarouselProps } from './image-carousel.types';
 import { styles } from './image-carousel.styles';
@@ -35,12 +36,42 @@ export const ImageCarousel = ({
     }
   };
 
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (currentIndex > 0) {
+      onIndexChange(currentIndex - 1);
+    } else {
+      onIndexChange(images.length - 1); // Ciclo al final opcional
+    }
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (currentIndex < images.length - 1) {
+      onIndexChange(currentIndex + 1);
+    } else {
+      onIndexChange(0); // Vuelve al inicio opcional
+    }
+  };
+
   return (
     <div {...stylex.props(styles.root)}>
       {category && (
         <div {...stylex.props(styles.badgePosition)}>
           <Badge variant="secondary">{category}</Badge>
         </div>
+      )}
+
+      {/* Botón Anterior (Desktop / Click) */}
+      {images.length > 1 && (
+        <button
+          type="button"
+          onClick={handlePrev}
+          aria-label="Imagen anterior"
+          {...stylex.props(styles.navButton, styles.prevButton)}
+        >
+          <ChevronLeft size={20} />
+        </button>
       )}
 
       <div
@@ -58,6 +89,17 @@ export const ImageCarousel = ({
           />
         ))}
       </div>
+
+      {images.length > 1 && (
+        <button
+          type="button"
+          onClick={handleNext}
+          aria-label="Imagen siguiente"
+          {...stylex.props(styles.navButton, styles.nextButton)}
+        >
+          <ChevronRight size={20} />
+        </button>
+      )}
 
       {images.length > 1 && (
         <div {...stylex.props(styles.dots)}>

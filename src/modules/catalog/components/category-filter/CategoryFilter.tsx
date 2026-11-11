@@ -5,12 +5,12 @@ import { styles } from './category-filter.styles';
 import { Button } from '@/components/ui/button';
 
 export const CategoryFilter = ({
-  categories,
+  categories = [],
   activeCategory,
   onSelectCategory,
 }: CategoryFilterProps) => (
   <nav {...stylex.props(styles.nav)}>
-    {categories.map((category) => {
+    {categories?.map((category) => {
       const isSelected = activeCategory === category;
 
       return (

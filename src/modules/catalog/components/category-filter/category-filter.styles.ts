@@ -9,7 +9,6 @@ export const styles = stylex.create({
     overflowX: 'auto',
     paddingBottom: spacing.sm,
     
-    // Ocultar scrollbar de forma nativa en StyleX
     scrollbarWidth: 'none', // Firefox
     '::-webkit-scrollbar': {
       display: 'none', // Chrome, Safari, Edge

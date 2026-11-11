@@ -12,15 +12,28 @@ const styles = stylex.create({
     fontFamily: fonts.sans,
     color: colors.textPrimary,
   },
-  phoneFrame: {
-    maxWidth: 448,
-    marginInline: 'auto',
+  productRouteWrapper: {
     minHeight: '100vh',
     backgroundColor: colors.bgApp,
-    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
     position: 'relative',
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
+    width: '100%',
+    maxWidth: {
+      default: '448px',
+      '@media (min-width: 768px)': '100%',
+    },
+    marginInline: 'auto',
+    boxShadow: {
+      default: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+      '@media (min-width: 768px)': 'none',
+    },
+    borderLeftWidth: {
+      default: 1,
+      '@media (min-width: 768px)': 0,
+    },
+    borderRightWidth: {
+      default: 1,
+      '@media (min-width: 768px)': 0,
+    },
     borderLeftColor: 'rgba(239, 167, 155, 0.1)',
     borderRightColor: 'rgba(239, 167, 155, 0.1)',
   },
@@ -36,7 +49,7 @@ export function App() {
           <Route
             path="/product/:id"
             element={
-              <div {...stylex.props(styles.phoneFrame)}>
+              <div {...stylex.props(styles.productRouteWrapper)}>
                 <ProductDetailScreen />
               </div>
             }

@@ -1,26 +1,40 @@
-import { useMemo } from 'react';
-import catalogData from '../../catalog/data/products.json';
-import productDetailsData from '../data/productDetails.json';
+import { useState, useEffect } from 'react';
 import type { CatalogItem } from '../../catalog/types/catalog.types';
-import type { ProductDetail, ProductDetailsMap } from '../types/product-detail.type';
-
+import type { ProductDetail } from '../types/product-detail.type';
 
 export interface FullProductDetail extends CatalogItem, ProductDetail {}
 
 export function useProductDetail(id?: string): FullProductDetail | null {
-  return useMemo(() => {
-    if (!id) return null;
+  const [fullProduct, setFullProduct] = useState<FullProductDetail | null>(null);
 
-    // Búsqueda del elemento base en el catálogo
-    const baseProduct = (catalogData as CatalogItem[]).find((p) => p.id === id);
-    // Búsqueda O(1) del detalle extendido en el mapa
-    const detailProduct = (productDetailsData as ProductDetailsMap)[id];
+  useEffect(() => {
+    if (!id) return;
 
-    if (!baseProduct || !detailProduct) return null;
+    Promise.all([
+      fetch('/catalog/data/products.json').then((res) => res.json()),
+      fetch(`/detail/data/${id}.json`).then((res) => {
+        if (!res.ok) throw new Error(`No se encontró el detalle para ${id}`);
+        return res.json();
+      })
+    ])
+      .then(([catalogData, detailProduct]) => {
+        const baseProduct = (catalogData as CatalogItem[]).find((p) => p.id === id);
 
-    return {
-      ...baseProduct,
-      ...detailProduct,
-    };
+        if (!baseProduct) {
+          setFullProduct(null);
+          return;
+        }
+        
+        setFullProduct({
+          ...baseProduct,
+          ...detailProduct,
+        });
+      })
+      .catch((err) => {
+        console.error('Error al cargar el micromanejo del detalle:', err);
+        setFullProduct(null);
+      });
   }, [id]);
+
+  return fullProduct;
 }

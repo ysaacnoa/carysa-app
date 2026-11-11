@@ -22,6 +22,16 @@ export const styles = stylex.create({
       borderLeftColor: 'rgba(239, 167, 155, 0.1)',
       borderRightColor: 'rgba(239, 167, 155, 0.1)',
     },
+    '@media (min-width: 1080px)': {
+      maxWidth: '1600px',
+      boxShadow: shadows.phone,
+      borderLeftWidth: '1px',
+      borderRightWidth: '1px',
+      borderLeftStyle: 'solid',
+      borderRightStyle: 'solid',
+      borderLeftColor: 'rgba(239, 167, 155, 0.1)',
+      borderRightColor: 'rgba(239, 167, 155, 0.1)',
+    },
   },
   main: {
     marginTop: '124px',

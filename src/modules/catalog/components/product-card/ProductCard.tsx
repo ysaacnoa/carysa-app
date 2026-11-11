@@ -14,7 +14,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     >
       <div {...stylex.props(styles.imageWrap)}>
         <img
-          src={product.mainImage}
+          src={product.coverImage}
           alt={product.name}
           loading="lazy"
           {...stylex.props(styles.image)}
@@ -26,10 +26,6 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
       <div {...stylex.props(styles.info)}>
         <h3 {...stylex.props(styles.name)}>{product.name}</h3>
-
-        <p {...stylex.props(styles.fabric)}>
-          Tela: <span {...stylex.props(styles.fabricHighlight)}>{product.fabric}</span>
-        </p>
 
         <div {...stylex.props(styles.priceRow)}>
           <span {...stylex.props(styles.price)}>S/.{product.price.toFixed(2)}</span>
